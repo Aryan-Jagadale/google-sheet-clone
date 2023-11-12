@@ -107,7 +107,19 @@
   width: calc(100vw - 5rem - 0.7rem - 0.7rem - 0.7rem);
 }
 
+.color-prop{
+  position: relative;
+}
 
+.color-prop > input{
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
 
 
 
