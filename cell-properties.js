@@ -15,6 +15,8 @@ for (let i = 0; i < rows; i++) {
       fontColor: "#000000",
       bgColor: "#000000",
       value:"",
+      formula:"",
+      children:[]
     };
     sheetRow.push(cellProps);
   }
@@ -164,7 +166,6 @@ function addListenertoAttachCellProps(cell) {
         let [rid,cid] = decodeRIDCIDfromAddress(address);
 
         let cellProp = sheetDB[rid][cid];
-        console.log("CellPRop",cellProp);
 
         //Data Change
         cell.style.fontWeight = cellProp.bold ? "bold"  :"normal";
@@ -202,6 +203,9 @@ function addListenertoAttachCellProps(cell) {
                 rightAlign.style.backgroundColor = activeColorProp;
                 break;
         }
+        let formulaBar = document.querySelector(".formula-bar");
+        formulaBar.value = cellProp.formula;
+        cell.innerText = cellProp.value;
 
     })
 }
